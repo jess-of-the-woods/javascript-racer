@@ -14,15 +14,32 @@ function trackLengthSet() {
     $("#player2_strip").append("<td>");
   };
 
- // console.log(trackLength);
 };
 trackLengthSet();
 
 
-alert("Player 1 use 'q' to move, Player 2 use 'p'.");
+alert("Player 1 use 'Q' to move, Player 2 use 'P'.");
+
+function gameStart() {
+
+  $("td").removeClass("active"); //removes active class from all td's
+  $("#player1_strip > td:first, #player2_strip td:first").addClass("active"); //sets first td of both rows to active
+
+  //event listener for keypress
+  $(document).on('keyup',function(event) {
+    if (event.which == 81) {
+      player1Move++;
+    }
+    else  if (event.which == 80) {
+      player2Move++;
+    }
+    console.log(player1Move, player2Move);
+
+  }) //close listener
+
+} //close gameStart
 
 
-
-
+gameStart();
 
 });
