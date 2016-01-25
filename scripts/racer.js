@@ -70,8 +70,12 @@ gameStart();
 
   win = function(winner) {
     alert(winner + " wins!, Congratulations!");
+    gameOver();
   }; //close 'win function'
 
+  function gameOver() {
+        window.location.reload(true);
+  }; //close 'game over function'
 
 }); //close 'document ready function'
 
