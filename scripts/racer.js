@@ -3,7 +3,8 @@ $(document).ready(function() {
   var player2Move = 0;
   var trackLength = 0;
 
-function trackLengthSet() {
+//this section sets the length of the track from user input
+function setTrackLength() {
   trackLength = prompt("Please type a number between 10 & 40 to choose your track length..");
   if (trackLength < 10) {
     trackLength = 10
@@ -14,32 +15,63 @@ function trackLengthSet() {
     $("#player2_strip").append("<td>");
   };
 
-};
-trackLengthSet();
+}; //close setTrackLength
+
+setTrackLength();
 
 
 alert("Player 1 use 'Q' to move, Player 2 use 'P'.");
+
 
 function gameStart() {
 
   $("td").removeClass("active"); //removes active class from all td's
   $("#player1_strip > td:first, #player2_strip td:first").addClass("active"); //sets first td of both rows to active
 
-  //event listener for keypress
-  $(document).on('keyup',function(event) {
-    if (event.which == 81) {
-      player1Move++;
-    }
-    else  if (event.which == 80) {
-      player2Move++;
-    }
+  
+  $(document).on('keyup',function(event) { //event listener - keypress
+  
+    if (event.keyCode === 81) {
+      if (player1Move < trackLength) {
+        updatePlayer('player1_strip');
+        player1Move++;
+      }
+      else {
+        win("Player 1");
+      }
+    }; //close 'if 81 loop'
+
+    if (event.keyCode === 80) {
+      if (player2Move < trackLength) {
+        updatePlayer('player2_strip');
+        player2Move++;
+      }
+      else {
+        win("Player 2");
+      }
+    }; //close 'if 80 loop'
     console.log(player1Move, player2Move);
 
-  }) //close listener
+  }); //close listener
 
-} //close gameStart
+
+}; //close 'gameStart function'
 
 
 gameStart();
 
-});
+  updatePlayer = function(player) {
+    var activeCell = $("#" + player + " td.active");
+    var moveCell = activeCell.next();
+
+    activeCell.removeClass("active");
+    moveCell.addClass("active");
+  }; //close 'updatePlayer function'
+
+  win = function(winner) {
+    alert(winner + " wins!, Congratulations!");
+  }; //close 'win function'
+
+
+}); //close 'document ready function'
+
