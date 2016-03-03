@@ -4,7 +4,7 @@ $(document).ready(function () {
   var trackLength = 0
 
 // this section sets the length of the track from user input
-  function setTrackLength () {
+/*  function setTrackLength () {
     trackLength = prompt("Please type a number between 10 & 40 to choose your track length..")
     if (trackLength < 10) {
       trackLength = 10
@@ -15,9 +15,9 @@ $(document).ready(function () {
       $("#player2_strip").append("<td>")
     };
   }; // close setTrackLength
-  setTrackLength()
+  setTrackLength()*/
 
-  alert("Player 1 use 'Q' to move, Player 2 use 'P'.");
+/*  alert("Player 1 use 'Q' to move, Player 2 use 'P'.");*/
 
   function gameStart () {
     $("td").removeClass("active") // removes active class from all td's

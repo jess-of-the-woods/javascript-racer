@@ -1,0 +1,6 @@
+Does anyone know if its possible to implement a circuit type shape in html using tables? Like empty space on the inside, with a box surrounding with cells (td's) Like a square shaped racetrack. Wondering if this is doable as a upgrade.. 
+
+inside td's have a different class, with display none
+
+Ideas: 
+levels, power-ups, a maze course
