@@ -4,3 +4,15 @@ inside td's have a different class, with display none
 
 Ideas: 
 levels, power-ups, a maze course
+
+
+
+maybe td classes for p1 & p2 tracks, numeric id's for each next cell
+
+
+
+var p1Strip = document.getElementById("p1_strip");
+p1Strip.className += " active";
+
+var p2Strip = document.getElementById("p2_strip");
+p2Strip.className += " active";

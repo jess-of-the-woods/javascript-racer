@@ -1,18 +1,21 @@
-* {
-  background-color: #b9b9b9;
+body {
+  background-color: #966f33;
+}
+
+h1 {
+  margin: 20px;
+  color: #77b300;
 }
 
 h2 {
-  margin: 10px;
-  color: green;
-};
+  color: #483c32;
+  margin: 30px;
+}
 
 #main {
   position: absolute;
-  margin: 10%;
-  padding: 10%;
-  border-style: solid;
-  border-color: black;
+  margin: 2%;
+  padding: 2%;
 }
 
 /*.racer_table {
@@ -20,22 +23,33 @@ h2 {
 }*/
 
 td {
-/*  margin: 10%;*/
-  background-color: white;
-  height: 30px;
-  width: 30px;
-  border-color: black;
+  background-color: #b9b9b8;
+  height: 50px;
+  width: 50px;
+  border-color: grey; /*find darker grey*/
   border-style: solid;
   border-collapse: collapse;
 }
 
-.racer_table td.active {
-  background-color: green;
+.active {
+  background-color: #ff994d;
 }
 
-td .invisible {
+.invisible {
   border-color: transparent;
   border-style: none;
+/*  border-collapse: collapse;*/
+  background-color: #966f33;
+}
+
+.p1_strip{
+  background-color: #999999;
+  opacity: .4;
+}
+
+.p2_strip {
+  background-color: #6666ff;
+  opacity: .4;
 }
 
 /*button {
